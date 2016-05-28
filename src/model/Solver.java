@@ -17,7 +17,7 @@ public class Solver {
     }
 
     public void initiateWith(int[][] puzzle) throws IllegalArgumentException {
-        if (Math.sqrt((double)puzzle.length)%1==0) {
+        if (Math.sqrt((double)puzzle.length)%1==0 && puzzle.length > 0) {
             startPuzzle = puzzle;
             puzzleLength = puzzle.length;
             progress = puzzle;
