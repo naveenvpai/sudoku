@@ -69,7 +69,7 @@ public class Solver {
      *              6 7 8
      * @return
      */
-    private int numEmptySquaresInSquare(int index) {
+    private int numEmptySquaresInGrid(int index) {
         /*
         0 0 0 1 1 1 2 2 2
         0 0 0 1 1 1 2 2 2
@@ -81,9 +81,10 @@ public class Solver {
         6 6 6 7 7 7 8 8 8
         6 6 6 7 7 7 8 8 8
          */
-        int squareLength = (int)Math.sqrt(puzzleLength);
-        int startColumn  = (index%squareLength)*squareLength;
-        int startRow     = (index-index%squareLength)*squareLength;
+        int gridLength  = (int)Math.sqrt(puzzleLength);
+        int startColumn = (index%gridLength)*gridLength;
+        int startRow    = (index-index%gridLength)*gridLength;
+        return 5;
     }
 
     private void fillSquare(int r, int c, int val) {

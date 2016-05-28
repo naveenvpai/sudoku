@@ -3,10 +3,17 @@
  */
 public class Main {
     public static void main(String[] args) {
-        for (int i = 0; i <= 100; i++) {
-            if (Math.sqrt((double)i)%1==0) System.out.println(i);
+        int length = 9;
+        for (int i = 0; i < length; i++) {
+            print(locateGrid(i,length));
         }
-        print(m(a(1,2,3,4),a(5,6,7,8)));
+    }
+
+    private static int[] locateGrid(int index, int puzzleLength) {
+        int gridLength = (int)Math.sqrt(puzzleLength);
+        int startColumn  = (index%gridLength)*gridLength;
+        int startRow     = (index-index%gridLength)*gridLength;
+        return a(startRow,startColumn);
     }
 
     private static int[] a(int... els) {
