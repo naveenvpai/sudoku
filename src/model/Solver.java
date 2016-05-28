@@ -70,21 +70,16 @@ public class Solver {
      * @return
      */
     private int numEmptySquaresInGrid(int index) {
-        /*
-        0 0 0 1 1 1 2 2 2
-        0 0 0 1 1 1 2 2 2
-        0 0 0 1 1 1 2 2 2
-        3 3 3 4 4 4 5 5 5
-        3 3 3 4 4 4 5 5 5
-        3 3 3 4 4 4 5 5 5
-        6 6 6 7 7 7 8 8 8
-        6 6 6 7 7 7 8 8 8
-        6 6 6 7 7 7 8 8 8
-         */
         int gridLength  = (int)Math.sqrt(puzzleLength);
         int startColumn = (index%gridLength)*gridLength;
         int startRow    = index-(index%gridLength);
-        return 5;
+        int numEmpty    = 0;
+        for (int r = startRow; r < startRow+gridLength; r++) {
+            for (int c = startColumn; c < startColumn+gridLength; c++) {
+                if (progress[r][c] == 0) numEmpty++;
+            }
+        }
+        return numEmpty;
     }
 
     private void fillSquare(int r, int c, int val) {

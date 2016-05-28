@@ -3,16 +3,20 @@
  */
 public class Main {
     public static void main(String[] args) {
-        int length = 9;
-        for (int i = 0; i < length; i++) {
-            print(locateGrid(i,length));
+        int length = 1;
+        while (length < 36) {
+            for (int i = 0; i < length; i++) {
+                print(locateGrid(i, length));
+            }
+            System.out.println("******");
+            length = (int)Math.pow((int)Math.sqrt(length)+1,2);
         }
     }
 
     private static int[] locateGrid(int index, int puzzleLength) {
         int gridLength = (int)Math.sqrt(puzzleLength);
         int startColumn  = (index%gridLength)*gridLength;
-        int startRow     = (index-index%gridLength)*gridLength;
+        int startRow     = index-(index%gridLength);
         return a(startRow,startColumn);
     }
 
