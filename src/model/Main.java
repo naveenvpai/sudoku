@@ -3,21 +3,16 @@
  */
 public class Main {
     public static void main(String[] args) {
-        int length = 1;
-        while (length < 36) {
-            for (int i = 0; i < length; i++) {
-                print(locateGrid(i, length));
-            }
-            System.out.println("******");
-            length = (int)Math.pow((int)Math.sqrt(length)+1,2);
-        }
-    }
-
-    private static int[] locateGrid(int index, int puzzleLength) {
-        int gridLength = (int)Math.sqrt(puzzleLength);
-        int startColumn  = (index%gridLength)*gridLength;
-        int startRow     = index-(index%gridLength);
-        return a(startRow,startColumn);
+        int[][] testPuzzle =  m(a(0,0,0,0,0,1,5,0,0),
+                                a(5,0,0,3,0,0,0,0,0),
+                                a(1,4,2,6,0,0,3,0,0),
+                                a(6,0,0,7,5,0,4,2,0),
+                                a(8,0,0,0,9,0,0,1,0),
+                                a(7,2,0,4,0,0,9,3,6),
+                                a(0,0,0,0,6,0,0,0,0),
+                                a(0,1,8,0,7,0,0,0,0),
+                                a(9,5,0,0,0,0,0,8,0));
+        print(testPuzzle);
     }
 
     private static int[] a(int... els) {
