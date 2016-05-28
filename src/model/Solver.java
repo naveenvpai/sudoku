@@ -83,7 +83,7 @@ public class Solver {
          */
         int gridLength  = (int)Math.sqrt(puzzleLength);
         int startColumn = (index%gridLength)*gridLength;
-        int startRow    = (index-index%gridLength)*gridLength;
+        int startRow    = index-(index%gridLength);
         return 5;
     }
 
